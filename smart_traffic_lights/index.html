@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+
+    <script>
+        window.jQuery = window.$ = require("jquery/dist/jquery.min");
+    </script>
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+</head>
+<body>
+
+<div id="vueapp" style="padding: 10px;">
+    <div style="display: flex;flex-direction: row;margin-bottom: 10px;">
+        <div class="card">
+            <div class="card-header">SN南北，实时{{countSN}}，近期{{recentCountSNNumber}}</div>
+            <div>
+                <video ref="previewSN" width="320" height="180" src="res/videos/SN.mp4" autoplay muted loop></video>
+            </div>
+        </div>
+        <div class="card" style="margin-left: 10px;">
+            <div class="card-header">EW东西，实时{{countEW}},近期{{recentCountEWNumber}}</div>
+            <div>
+                <video ref="previewEW" width="320" height="180" src="res/videos/EW.mp4" autoplay muted loop></video>
+            </div>
+        </div>
+    </div>
+
+    <traffic-lights ref="tl"></traffic-lights>
+
+</div>
+
+<script src="./renderer.js"></script>
+</body>
+</html>
